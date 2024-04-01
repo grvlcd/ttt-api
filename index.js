@@ -10,6 +10,11 @@ const app = express();
 app.use(express.json());
 
 app.use("/api/v1/histories", historyRoutes);
+app.get("/", (req, res) => {
+  res.json({
+    message: "hello world",
+  });
+});
 
 app.listen(PORT, async () => {
   await mongoose.connect(process.env.MONGO_DB_URL);
