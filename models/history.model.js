@@ -34,18 +34,10 @@ const HistorySchema = mongoose.Schema(
         },
       },
     ],
-    draws: [
-      {
-        player: {
-          type: String,
-          required: true,
-        },
-        value: {
-          type: Number,
-          required: true,
-        },
-      },
-    ],
+    draws: {
+      type: Number,
+      default: 0,
+    },
   },
   { timestamps: true }
 );
