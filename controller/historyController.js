@@ -24,7 +24,8 @@ const saveHistory = async (req, res) => {
 
 const getHistory = async (req, res) => {
   try {
-    const gameDatas = await History.find();
+    const gameDatas = await History.find()
+      .sort([["createdAt", "descending"]]);
 
     res.json({
       data: gameDatas,
